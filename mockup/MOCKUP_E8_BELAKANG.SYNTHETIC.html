@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>E8 BELAKANG (DEMO) — Rincian & Ruang Sidang · NO-ORDER · DATA FIKTIF</title>
+<style>
+:root{--bg:#07090d;--panel:#0e1219;--panel2:#131926;--line:#1f2735;--gold:#d9a441;--txt:#dfe3ea;
+--mut:#8a93a3;--mut2:#5a6474;--ok:#4cba7c;--warn:#e8963f;--bad:#d95757;--blue:#5f9bd4;
+--mono:"Cascadia Code","Consolas",ui-monospace,monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--txt);font-family:"Segoe UI",system-ui,sans-serif;padding-bottom:40px}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.bar{display:flex;gap:16px;align-items:center;background:var(--panel);border-bottom:1px solid var(--line);padding:9px 18px;font-size:12px;color:var(--mut)}
+a.blk{color:var(--blue);text-decoration:none;font-size:11px}
+.tabs{display:flex;gap:6px;padding:12px 18px 0}
+.tab{font-size:11.5px;padding:7px 14px;border:1px solid var(--line);border-bottom:none;border-radius:9px 9px 0 0;color:var(--mut);cursor:pointer;background:var(--panel)}
+.tab.on{color:var(--gold);background:var(--panel2);font-weight:700}
+.isi{margin:0 18px;background:var(--panel2);border:1px solid var(--line);border-radius:0 12px 12px 12px;padding:16px}
+h3{font-size:11px;letter-spacing:.12em;color:var(--gold);text-transform:uppercase;margin:14px 0 8px}
+h3:first-child{margin-top:0}
+table{width:100%;border-collapse:collapse;font-size:11.5px}
+td,th{padding:6px 9px;border-bottom:1px solid var(--line);text-align:left;color:var(--mut)}
+th{color:var(--gold);font-size:9.5px;letter-spacing:.1em}
+.win{color:var(--ok);font-weight:700}.bad{color:var(--bad);font-weight:700}.warn{color:var(--warn);font-weight:700}
+.ket{font-size:10.5px;color:var(--mut2);margin-top:6px}
+.chip{display:inline-block;font-size:9px;font-weight:700;padding:1px 7px;border-radius:4px}
+.c-l{background:#14200f;color:var(--ok);border:1px solid #2b4a24}
+.c-t{background:#241014;color:var(--bad);border:1px solid #512830}
+.c-s{background:#241c10;color:var(--warn);border:1px solid #4a3a1c}
+.banner{background:#241014;color:var(--warn);font-size:11px;padding:8px 18px;border-bottom:1px solid #4a3a1c;text-align:center}
+</style></head><body>
+<div class="banner">⚠️ DATA SINTETIS UNTUK DEMONSTRASI TAMPILAN UI SAJA — bukan hasil backtest, bukan sinyal nyata, bukan nama strategi asli.</div>
+<div class="bar"><b style="color:var(--txt)">E8 BELAKANG (DEMO) — RINCIAN</b><span>tampilan panel, bukan data produksi</span>
+<a class="blk" style="margin-left:auto" href="MOCKUP_E8_DEPAN.SYNTHETIC.html">← KOKPIT</a></div>
+
+<div class="tabs">
+<div class="tab on">📜 Riwayat sinyal</div><div class="tab">🏔️ Album bab</div><div class="tab">🗜️ Kurungan</div><div class="tab">⚖️ Ruang sidang</div><div class="tab">🩺 Kesehatan data</div>
+</div>
+<div class="isi">
+
+<h3>📜 Riwayat sinyal (contoh) — dengan jejak audit lengkap</h3>
+<table>
+<tr><th>JAM UTC</th><th>SINYAL</th><th>PROYEKSI-1</th><th>PROYEKSI-2</th><th>JEDA</th><th>KONTEKS</th><th>SKOR-KOREKSI</th><th>CATATAN</th><th>HASIL (net)</th></tr>
+<tr><td class="num">14:10</td><td class="win">NAIK +18,4 ✓</td><td>lanjut 0,6</td><td>lanjut 0,6 ✓sepakat</td><td class="num">210m</td><td>konteks-2 · sesi-2</td><td class="num">0,29</td><td>kontra·muda ▲</td><td class="bad num">CUT −9,1</td></tr>
+<tr><td class="num">08:05</td><td class="win">NAIK +31,7 ✓</td><td>lanjut 0,7</td><td>lanjut 0,7 ✓</td><td class="num">75m</td><td>konteks-3 · sesi-1</td><td class="num">0,17</td><td>searah</td><td class="win num">HOLD +4,4</td></tr>
+<tr><td class="num">02:40</td><td class="win">NAIK +31,7 ✓</td><td>koreksi→lanjut</td><td>✓sepakat</td><td class="num">75m</td><td>konteks-3 · sesi-1</td><td class="num">0,10</td><td>searah</td><td class="bad num">CUT −9,1</td></tr>
+</table>
+<div class="ket">contoh saja — versi produksi menampilkan rincian per baris (fitur, pembanding historis, jejak eksekusi) yang tidak dipublikasikan</div>
+
+<h3>🏔️ Album bab — narasi skala-besar (contoh)</h3>
+<table>
+<tr><th>MULAI→AKHIR</th><th>ARAH</th><th>UKURAN</th><th>DURASI</th><th>METRIK-1</th><th>METRIK-2</th><th>NASIB</th></tr>
+<tr><td class="num">contoh-1→contoh-2</td><td class="bad">TURUN</td><td class="num">−310pt</td><td class="num">9,5 hari</td><td class="num">0,26</td><td class="num">0,38</td><td><span class="chip c-t">PATAH → naik</span></td></tr>
+<tr><td class="num">contoh-3→contoh-4</td><td class="win">NAIK</td><td class="num">+280pt</td><td class="num">5,2 hari</td><td class="num">0,18 (tenang)</td><td class="num">0,49 (kuat)</td><td><span class="chip c-l">LANJUT</span></td></tr>
+<tr><td class="num">▶ BERJALAN</td><td class="bad">TURUN</td><td class="num">−140pt</td><td class="num">1,6 hari</td><td class="num">0,24</td><td class="num">0,41</td><td><span class="chip c-s">skor-koreksi 0,29 · perkiraan: LANJUT 55%</span></td></tr>
+</table>
+<div class="ket">isi lengkap tiap kartu (fitur granular, pembobotan, rasio internal) hanya ada di versi private</div>
+
+<h3>🗜️ Riwayat kurungan (kompresi) — contoh</h3>
+<table>
+<tr><th>TERKUNCI</th><th>DURASI</th><th>RENTANG</th><th>CONDONG</th><th>SISI TERSANGKA</th><th>HASIL SETELAHNYA</th><th>COCOK?</th></tr>
+<tr><td class="num">contoh 1</td><td class="num">7j50m</td><td class="num">20,5pt</td><td class="win">BELI +0,15</td><td class="win">ATAS ▲</td><td class="num win">+48pt ▲</td><td class="win">✓</td></tr>
+<tr><td class="num">contoh 2</td><td class="num">3j05m</td><td class="num">16,2pt</td><td class="bad">JUAL −0,09</td><td class="bad">BAWAH ▼</td><td class="num bad">−36pt ▼</td><td class="win">✓</td></tr>
+<tr><td class="num">contoh 3</td><td class="num">5j40m</td><td class="num">19,0pt</td><td class="num">netral +0,02</td><td class="num">—</td><td class="num">+9pt (tak bergerak jauh)</td><td>—</td></tr>
+</table>
+
+<h3>⚖️ Ruang sidang — contoh registri kandidat (menampilkan yang lolos maupun tidak)</h3>
+<table>
+<tr><th>KANDIDAT</th><th>MELAWAN</th><th>PROTOKOL</th><th>SKOR</th><th>VONIS</th></tr>
+<tr><td>Kandidat-A</td><td>acak</td><td class="num">CPCV 20f</td><td class="num">20/20 · Δ+0,05x · p≈0</td><td><span class="chip c-l">LULUS ★</span></td></tr>
+<tr><td>Kandidat-B</td><td>acak</td><td class="num">CPCV 16f</td><td class="num">16/16 · Δ+0,09x</td><td><span class="chip c-l">LULUS</span></td></tr>
+<tr><td>Kandidat-C</td><td>acak</td><td class="num">CPCV 22f</td><td class="num">18/22 · p0,004</td><td><span class="chip c-l">LULUS</span></td></tr>
+<tr><td>Kandidat-D</td><td>Kandidat-G &amp; acak</td><td class="num">CPCV 22f</td><td class="num">17/22 · p0,011</td><td><span class="chip c-l">LULUS</span></td></tr>
+<tr><td>Kandidat-E · Kandidat-F</td><td>acak</td><td class="num">CPCV 16f</td><td class="num">12/16 · 15/16</td><td><span class="chip c-l">LULUS</span></td></tr>
+<tr><td>Kandidat-G</td><td>acak</td><td class="num">CPCV 22f</td><td class="num">15/22 · p0,08</td><td><span class="chip c-t">DITOLAK (gagal tipis)</span></td></tr>
+<tr><td>Kandidat-H</td><td>Kandidat-D</td><td class="num">CPCV 22f</td><td class="num">2/22</td><td><span class="chip c-t">DITOLAK — ilusi level-fold</span></td></tr>
+<tr><td>Kandidat-I</td><td>acak</td><td class="num">CPCV 20f</td><td class="num">9/20 · p0,38</td><td><span class="chip c-t">DITOLAK — tidak signifikan</span></td></tr>
+<tr><td>Varian-bobot / seleksi-fitur</td><td>juara sebelumnya</td><td class="num">CPCV 22f</td><td class="num">≤8/22</td><td><span class="chip c-t">DITOLAK</span></td></tr>
+</table>
+<div class="ket">contoh susunan panel saja — protokol validasi asli (purge/embargo, jumlah kandidat, kriteria lulus) tidak dipublikasikan secara rinci</div>
+
+<h3>🩺 Kesehatan data (contoh)</h3>
+<table>
+<tr><th>PEMERIKSAAN</th><th>STATUS</th><th>ANGKA</th></tr>
+<tr><td>Konsistensi sumber data (contoh)</td><td class="win">SAH</td><td class="num">≈99% konsisten · sample besar</td></tr>
+<tr><td>Kelengkapan feed hari ini</td><td class="win">UTUH</td><td class="num">tanpa lubang tercatat (contoh)</td></tr>
+<tr><td>Perekam lapisan tambahan</td><td class="win">MENABUNG</td><td class="num">masih akumulasi data</td></tr>
+<tr><td>Test suite inti</td><td class="win">LULUS</td><td class="num">terakhir dijalankan: contoh tanggal</td></tr>
+</table>
+</div>
+<div style="padding:12px 18px;font-size:10.5px;color:var(--mut2)">Semua panel READ-ONLY · alat amati, bukan mesin cuan · <b>NO-ORDER</b> · seluruh angka pada halaman ini FIKTIF, hanya untuk demo tampilan</div>
+</body></html>

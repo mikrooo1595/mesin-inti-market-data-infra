@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>E8 DEPAN (DEMO) — Kokpit · OBSERVASI · NO-ORDER · DATA FIKTIF</title>
+<style>
+:root{--bg:#07090d;--panel:#0e1219;--panel2:#131926;--line:#1f2735;--gold:#d9a441;--gold2:#f0c674;
+--txt:#dfe3ea;--mut:#8a93a3;--mut2:#5a6474;--ok:#4cba7c;--warn:#e8963f;--bad:#d95757;--blue:#5f9bd4;
+--mono:"Cascadia Code","Consolas",ui-monospace,monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--txt);font-family:"Segoe UI",system-ui,sans-serif;padding:0 0 30px}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.chip{display:inline-block;font-size:9px;font-weight:700;padding:1px 7px;border-radius:4px;vertical-align:middle}
+.c-vonis{background:#14200f;color:var(--ok);border:1px solid #2b4a24}
+.c-obs{background:#241014;color:var(--bad);border:1px solid #512830}
+.c-live{background:#102015;color:var(--ok);border:1px solid #234a32}
+.banner{background:#241014;color:var(--warn);font-size:11px;padding:8px 18px;border-bottom:1px solid #4a3a1c;text-align:center}
+/* ① TANDA-HIDUP */
+.bar{display:flex;gap:18px;align-items:center;background:var(--panel);border-bottom:1px solid var(--line);padding:9px 18px;font-size:11.5px;color:var(--mut);position:sticky;top:0}
+.bar b{color:var(--txt)}
+.detak{width:9px;height:9px;border-radius:50%;background:var(--ok);animation:dtk 1.6s infinite}
+@keyframes dtk{0%,100%{opacity:1}50%{opacity:.25}}
+.grid{display:grid;grid-template-columns:1.5fr 1fr;gap:14px;padding:14px 18px;max-width:1500px}
+.kartu{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+h2{font-size:11px;letter-spacing:.14em;color:var(--gold);text-transform:uppercase;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center}
+/* ② BEL PROYEKSI */
+.bel{border-left:4px solid var(--gold);background:var(--panel2);border-radius:8px;padding:11px 14px;margin-bottom:9px}
+.bel .h{display:flex;justify-content:space-between;font-size:12px}
+.bel .b{font-size:17px;font-weight:700;margin:3px 0}
+.bel .b .naik{color:var(--ok)} .bel .m{font-size:10.5px;color:var(--mut)}
+/* ③ TERMOMETER */
+.termo{margin-top:4px}
+.trek{height:14px;border-radius:7px;background:var(--panel2);border:1px solid var(--line);position:relative;overflow:hidden}
+.isi{position:absolute;inset:0;width:70%;background:linear-gradient(90deg,#173121,#2e5d3c);border-right:2px solid var(--ok)}
+.tanda20{position:absolute;right:0;top:-4px;bottom:-4px;width:2px;background:var(--gold)}
+.tl{display:flex;justify-content:space-between;font-size:9.5px;color:var(--mut2);margin-top:3px}
+/* ④ BAB MAKRO */
+.lantai{display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px dashed var(--line);font-size:12px}
+.lantai:last-child{border:none}
+.sk{width:52px;color:var(--mut);font-family:var(--mono)}
+.arah-t{color:var(--bad);font-weight:700}.arah-n{color:var(--ok);font-weight:700}
+.karet{flex:1;height:8px;border-radius:4px;background:var(--panel2);position:relative}
+.karet i{position:absolute;top:0;bottom:0;left:0;border-radius:4px;background:var(--warn);opacity:.85}
+.lampu{font-size:10px;font-weight:700;padding:2px 8px;border-radius:5px}
+.l-lanjut{background:#14200f;color:var(--ok)} .l-patah{background:#241014;color:var(--bad)}
+/* ⑤ JEMBATAN */
+.jemb{background:var(--panel2);border-radius:8px;padding:10px 13px;font-size:12px;border-left:4px solid var(--blue);margin-top:8px}
+/* ⑥ KOMPRESI */
+.komp .baris{display:flex;gap:14px;align-items:center;font-size:12px}
+.cvdbar{flex:1;height:12px;border-radius:6px;background:linear-gradient(90deg,#3a2224 0 50%,#1c3325 50% 100%);position:relative}
+.cvdbar i{position:absolute;top:-3px;width:3px;height:18px;background:var(--gold2);left:63%}
+.sisi{font-weight:800;color:var(--ok)}
+.ftr{padding:10px 18px;font-size:10.5px;color:var(--mut2);border-top:1px solid var(--line);margin-top:8px}
+.riwayat{font-size:11px;width:100%;border-collapse:collapse}
+.riwayat td,.riwayat th{padding:5px 8px;border-bottom:1px solid var(--line);text-align:left;color:var(--mut)}
+.riwayat th{color:var(--gold);font-size:9.5px;letter-spacing:.1em}
+.riwayat .win{color:var(--ok)} .riwayat .cut{color:var(--bad)}
+a.blk{color:var(--blue);font-size:11px;text-decoration:none}
+</style></head><body>
+<div class="banner">⚠️ DATA SINTETIS UNTUK DEMONSTRASI TAMPILAN UI SAJA — bukan hasil backtest, bukan sinyal nyata, bukan nama strategi asli.</div>
+
+<!-- ① TANDA-HIDUP -->
+<div class="bar">
+  <span class="detak"></span>
+  <span><b>DEMO</b> WS n tr/dtk (contoh)</span>
+  <span>waktu contoh <b class="num">14:20:00</b> UTC</span>
+  <span>unit <b class="num">n</b></span>
+  <span>sinyal <b class="num">n</b></span>
+  <span>proyeksi <b class="num">n</b> <span style="color:var(--ok)">●</span></span>
+  <span>hasil <b class="num">n</b></span>
+  <span style="margin-left:auto" class="chip c-live">TAMPILAN DEMO</span>
+  <span class="chip c-obs">OBSERVASI · NO-ORDER</span>
+  <a class="blk" href="MOCKUP_E8_BELAKANG.SYNTHETIC.html">RINCIAN →</a>
+</div>
+
+<div class="grid">
+<div><!-- kolom kiri -->
+  <!-- ② BEL PROYEKSI -->
+  <div class="kartu">
+    <h2>🔔 Aba-aba paling awal — Proyeksi (contoh) <span class="chip c-vonis">proyeksi-1 mendahului proyeksi-2, median n mnt</span></h2>
+    <div class="bel">
+      <div class="h"><span><b>PROYEKSI-1</b> · 14:05 UTC</span><span class="chip c-live">DEMO · ambang belum tercapai</span></div>
+      <div class="b">arah perkiraan: <span class="naik">NAIK · pola contoh</span></div>
+      <div class="m">keyakinan contoh 0,6 · deskripsi kualitatif saja · akurasi historis TIDAK dipublikasikan di sini</div>
+    </div>
+    <div class="bel" style="border-color:var(--mut2);opacity:.8">
+      <div class="h"><span><b>PROYEKSI-2</b> · 14:05 UTC</span><span class="chip c-live">sepakat proyeksi-1</span></div>
+      <div class="m">proyeksi sama · dua metode independen SEPAKAT → lihat termometer di bawah</div>
+    </div>
+    <!-- ③ TERMOMETER -->
+    <div class="termo">
+      <h2 style="margin-top:8px">🌡️ Pergerakan sedang berjalan (contoh) <span class="chip c-vonis">tampilan apa adanya</span></h2>
+      <div class="trek"><div class="isi"></div><div class="tanda20"></div></div>
+      <div class="tl"><span>mulai (contoh)</span><span class="num" style="color:var(--txt);font-size:12px"><b>+n / n pt</b> · contoh</span><span>ambang (contoh)</span></div>
+    </div>
+  </div>
+
+  <!-- ⑤ JEMBATAN -->
+  <div class="kartu" style="margin-top:14px">
+    <h2>🌉 Catatan konteks (contoh) <span><span class="chip c-vonis">Kandidat-C · 18/22 · p0,004</span> <span class="chip c-vonis">Kandidat-D · 17/22 · p0,011</span></span></h2>
+    <div class="jemb"><b>Sinyal ini melawan tren jangka-menengah pada contoh ini.</b> Catatan (contoh): dalam pengujian historis, kondisi serupa
+    memiliki hasil rata-rata di atas acak. Rincian kondisi & ambang tidak dipublikasikan.</div>
+    <table class="riwayat" style="margin-top:10px">
+      <tr><th>JAM</th><th>SINYAL</th><th>KONTEKS</th><th>SKOR</th><th>CATATAN</th><th>HASIL</th></tr>
+      <tr><td class="num">14:10</td><td class="win">NAIK +18,4pt ✓</td><td>konteks-2</td><td class="num">0,29</td><td>kontra·muda ▲</td><td class="cut num">CUT −9,1</td></tr>
+      <tr><td class="num">08:05</td><td class="win">NAIK +31,7pt ✓</td><td>konteks-3</td><td class="num">0,17</td><td>searah</td><td class="win num">HOLD +4,4</td></tr>
+    </table>
+  </div>
+</div>
+
+<div><!-- kolom kanan -->
+  <!-- ④ BAB MAKRO -->
+  <div class="kartu">
+    <h2>🏔️ Konteks skala-besar (contoh) <span><span class="chip c-vonis">Kandidat-B · 16/16 · p&lt;0,01</span></span></h2>
+    <div class="lantai"><span class="sk">skala-1</span><span class="arah-t">TURUN</span><span class="num" style="color:var(--mut)">−n pt · n hr</span>
+      <div class="karet"><i style="width:38%"></i></div><span class="num">0,38</span><span class="lampu l-lanjut">LANJUT n%</span></div>
+    <div class="lantai"><span class="sk">skala-2</span><span class="arah-t">TURUN</span><span class="num" style="color:var(--mut)">−n pt · n hr</span>
+      <div class="karet"><i style="width:34%"></i></div><span class="num">0,34</span><span class="lampu l-lanjut">LANJUT n%</span></div>
+    <div class="lantai"><span class="sk">skala-3</span><span class="arah-n">NAIK</span><span class="num" style="color:var(--mut)">+n pt · n jam</span>
+      <div class="karet"><i style="width:71%"></i></div><span class="num">0,71</span><span class="lampu l-patah">WASPADA n%</span></div>
+    <div style="font-size:10px;color:var(--mut2);margin-top:8px">skor "karet" = indikator posisi relatif terhadap rentang historis (deskripsi kualitatif) · rumus & ambang persis tidak dipublikasikan</div>
+  </div>
+
+  <!-- ⑥ KOMPRESI -->
+  <div class="kartu komp" style="margin-top:14px">
+    <h2>🗜️ Kompresi (contoh) <span class="chip c-vonis">Kandidat-A · 20/20 · p≈0</span></h2>
+    <div class="baris"><span>terkunci sejak <b class="num">contoh</b> (n jam)</span><span>rentang <b class="num">n pt</b></span></div>
+    <div class="baris" style="margin-top:9px"><span style="font-size:10.5px;color:var(--mut)">indikator condong</span>
+      <div class="cvdbar"><i></i></div><span style="font-size:10.5px;color:var(--mut)">sisi tersangka (contoh): <span class="sisi">ATAS ▲</span></span></div>
+    <div style="font-size:10px;color:var(--mut2);margin-top:8px">durasi kompresi TIDAK menentukan besar pergerakan berikutnya (temuan kualitatif) — detail metodologi tidak dipublikasikan.</div>
+  </div>
+</div>
+</div>
+
+<div class="ftr"><b>Catatan:</b> seluruh angka pada halaman ini FIKTIF, dibuat untuk mendemonstrasikan tampilan panel · bukan sinyal nyata, bukan rekomendasi · konteks & peluang, BUKAN perintah · <b>NO-ORDER.</b></div>
+</body></html>

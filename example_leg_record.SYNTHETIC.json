@@ -1,0 +1,32 @@
+{
+  "_notice": "SYNTHETIC ILLUSTRATIVE EXAMPLE ONLY. These are fabricated placeholder values used to show the SHAPE of one 'leg' record, matching the schema in DATA_CONTRACT_EXAMPLE.md. They are NOT derived from any real market data, NOT a real trade, and NOT a signal. Do not use these numbers for any decision.",
+  "uid": "example-0000000",
+  "instrument": "EXAMPLE-INSTRUMENT",
+  "leg_start_ts": "2026-01-01T00:00:00Z",
+  "leg_end_ts": "2026-01-01T00:04:00Z",
+  "structure": {
+    "leg_size": 0.0,
+    "leg_duration_s": 0,
+    "leg_velocity": 0.0,
+    "atr_ratio": 0.0
+  },
+  "money_flow": {
+    "net_usd_per_min": 0.0,
+    "vpin": 0.0,
+    "kyle_lambda": 0.0,
+    "ofi": 0.0,
+    "benford_dev": 0.0
+  },
+  "psychology": {
+    "whale_pct": 0.0,
+    "cvd": 0.0,
+    "climax_flag": false,
+    "absorption_score": 0.0
+  },
+  "context": {
+    "frac_diff": 0.0,
+    "hmm_regime": 0,
+    "hour_of_day": 0,
+    "calendar_flag": false
+  }
+}
