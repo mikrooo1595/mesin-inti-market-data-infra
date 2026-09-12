@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+title: "MESIN INTI — Market Data Engine with Gates That Can Say No"
+message: "If you reference this work, please cite it as below."
+type: software
+authors:
+  - family-names: Yasin
+    given-names: Iqbal Muhammad
+    orcid: "https://orcid.org/0009-0007-2277-6917"
+    affiliation: "Independent Researcher"
+    city: Jakarta
+    country: ID
+abstract: >-
+  A market-data pipeline built so that every stage carries a guard and every
+  guard can refuse. Publishes gate definitions, an exit-code contract that
+  distinguishes "cannot check" from "passed", and a dated sabotage campaign
+  in which the author's own guards were deliberately broken to prove they can
+  fail. Core tuned values are private by design; the surrounding discipline
+  is published.
+keywords:
+  - data-pipeline
+  - reproducibility
+  - data-quality
+  - mutation-testing
+  - market-microstructure
+  - audit
+license: MIT
+version: 0.1.0
+date-released: "2026-09-12"
