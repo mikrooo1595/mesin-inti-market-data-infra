@@ -1,0 +1,44 @@
+{
+  "title": "MESIN INTI — Market Data Engine with Gates That Can Say No",
+  "description": "A market-data pipeline built so that every stage carries a guard and every guard can refuse. Publishes gate definitions, an exit-code contract that distinguishes 'cannot check' from 'passed', a public data contract with a runnable synthetic sample, and a dated sabotage campaign in which the author's own guards were deliberately broken to prove they can fail (17 of 20 caught; all three survivors published with specimen fingerprints). Tuned values are private by design. NO-ORDER: not a signal service, not investment advice, no claim about returns.",
+  "upload_type": "software",
+  "license": "MIT",
+  "access_right": "open",
+  "language": "eng",
+  "version": "0.1.0",
+  "creators": [
+    {
+      "name": "Yasin, Iqbal Muhammad",
+      "affiliation": "Independent Researcher, Jakarta, Indonesia",
+      "orcid": "0009-0007-2277-6917"
+    }
+  ],
+  "keywords": [
+    "data pipeline",
+    "data quality",
+    "reproducibility",
+    "mutation testing",
+    "sabotage testing",
+    "data contract",
+    "look-ahead bias",
+    "overfitting",
+    "purged cross-validation",
+    "market microstructure",
+    "audit trail",
+    "research software engineering"
+  ],
+  "notes": "NO-ORDER. This deposit documents data-engineering methodology and verification discipline only. It is not financial advice, not a trading signal, and carries no profit promise. The system described does not place, route, or execute trades. The mutation-testing figure (17/20) was measured on a sibling system (AB APPS), not on this engine; the scope is stated in the deposit. This software is not accredited and not certified by any body.",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/mikrooo1595/mesin-inti-market-data-infra",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://orcid.org/0009-0007-2277-6917",
+      "relation": "isIdenticalTo",
+      "scheme": "url",
+      "resource_type": "other"
+    }
+  ]
+}
