@@ -1,17 +1,13 @@
 #!/usr/bin/env python3
 """
-generate_manifest.py
----------------------
-Membuat daftar "sidik jari" (sha256) untuk setiap file di folder ini,
-lalu menyimpannya ke manifest.sha256.
+generate_manifest.py — record the fingerprint of every published file.
 
-CARA PAKAI (di komputer Anda, setelah semua file final ada di folder repo):
+Run this AFTER all files in the repository are final, then commit the
+resulting manifest.sha256 alongside them.
+
     python generate_manifest.py
 
-Jalankan ini SEKALI setelah semua file (report, gambar, README) sudah final,
-lalu commit manifest.sha256 ke GitHub bersama file lainnya.
-Siapa pun yang mendownload repo ini bisa menjalankan verify_manifest.py
-untuk membuktikan tidak ada file yang berubah/dipalsukan sejak dipublikasikan.
+Readers verify the result with verify_manifest.py.
 """
 import hashlib
 from pathlib import Path
