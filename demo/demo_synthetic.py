@@ -1,3 +1,6 @@
+# STATUS: NOT RUNNABLE YET. This file imports tribunal.py, which is not
+# published in this repository. It is kept here as a declaration of work in
+# progress, not as a working demo. See README section 4.
 #!/usr/bin/env python
 """demo_synthetic.py — runs the Judge on 100% fabricated data.
 
