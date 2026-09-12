@@ -148,7 +148,7 @@ The interface is in Indonesian. Reading the screenshot left to right:
 > A dashboard that announces its own data is stale, labels every element as live-or-demo, and refuses to build without its risk disclaimer — that is the whole discipline, visible in one picture.
 
 [Full board →](images/board_full.png)
-
+An earlier static UI mockup of the cockpit view is in `mockup/`.
 ---
 
 ## 7 · What is not here, and will not be
