@@ -4,7 +4,7 @@
 
 **I learned this in a hospital laboratory that gets inspected. Then I rebuilt the inspection in code.**
 
-[![DOI](https://img.shields.io/badge/DOI-pending-blue)](#citation)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22726511.svg)](https://doi.org/10.5281/zenodo.22726511)
 [![Mutation](https://img.shields.io/badge/sabotage_caught-17%2F20-a12d2d)](MUTATION_REPORT.md)
 [![Gates](https://img.shields.io/badge/gates-6-2f6b3a)](GATES.md)
 [![License](https://img.shields.io/badge/license-MIT-lightgrey)](LICENSE)
