@@ -42,22 +42,12 @@ Each price "leg" is converted into **24 measured features** across 4 groups:
 | Context | fractional differencing · HMM regime · time-of-day · release calendar |
 
 ## Disciplines that make this auditable
-
-- **Forensic feature quarantine** — outcome-based measures (MFE/MAE, trade
-  outcome) are structurally forbidden from being used as predictors; they
-  exist for post-hoc analysis only. This prevents look-ahead leakage by
-  construction, not by convention.
-- **Automated judge (walk-forward + Purged CPCV)** — every model is
-  evaluated on data it has never seen, using purge + embargo windows across
-  27–28 combinatorial paths, with a statistical verdict (median ΔAUC + sign
-  test) rather than a single backtest number.
+- **Gate definitions and their failure conditions** — see [GATES.md](GATES.md).
 - **Data contracts** — a fixed column schema across pipeline stages; join
   keys are identical across different traded instruments (apple-to-apple
   comparison).
 - **Ghost-data quarantine + health monitoring** — corrupted or anomalous
   data is isolated and flagged, never silently used.
-- **Deterministic, hash-tracked builds** — the feature-projection library
-  rebuilds byte-identical; this is auditable, not just claimed.
 
 ## What is NOT in this repository
 
