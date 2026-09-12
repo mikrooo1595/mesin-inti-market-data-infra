@@ -74,6 +74,7 @@ Full definitions: **[GATES.md](GATES.md)**
 | **Sabotage campaign, 20 mutants, dated** | **[MUTATION_REPORT.md](MUTATION_REPORT.md)** |
 | **The three sabotages that survived**, with specimen fingerprints | [MUTATION_REPORT.md § Survivors](MUTATION_REPORT.md#the-three-that-survived) |
 | **A live board with two build-blocking guards** | § 6 below |
+| **One command that checks every published file against its fingerprint** | `python verify_manifest.py` |
 
 ### 🔜 Declared, not yet available
 
