@@ -157,6 +157,15 @@ Tuned values — thresholds, model weights, calibration constants, and the froze
 
 What **is** here: the discipline around them, the gate definitions, the exit-code contract, and a dated record of my own guards being tested to destruction.
 
+### The boundary, in one table
+
+| Public | Private |
+|---|---|
+| Pipeline stage names and data flow | Pipeline source code |
+| Feature taxonomy — 17 of 24 features published | Feature weighting and cut-offs |
+| Validation protocol description | Validation results and performance figures |
+| Anti-leakage and anti-overfit design principles | Signal generation logic |
+
 ---
 
 ## 8 · What you can hold me to
