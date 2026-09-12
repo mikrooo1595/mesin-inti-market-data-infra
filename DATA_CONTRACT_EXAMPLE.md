@@ -56,6 +56,8 @@ history, no actual computed values are included anywhere in this file.
 
 ## What is intentionally NOT shown
 
+- The full feature set. This contract publishes 17 of the 24 measured
+  features. The remaining seven are withheld deliberately.
 - Actual numeric values (this document is schema-only)
 - Feature weights, combination logic, or thresholds
 - The outcome-based columns (MFE/MAE) that are quarantined from being used
