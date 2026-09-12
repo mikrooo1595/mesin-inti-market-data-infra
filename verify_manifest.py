@@ -1,19 +1,15 @@
 #!/usr/bin/env python3
 """
-verify_manifest.py
---------------------
-Ini skrip yang PALING PENTING untuk kredibilitas Anda.
+verify_manifest.py — check that no published file has been altered.
 
-Siapa pun (calon pembeli, reviewer, klien) bisa download repo ini lalu
-jalankan skrip ini untuk MEMBUKTIKAN SENDIRI bahwa tidak ada file yang
-diubah/dipalsukan sejak Anda mempublikasikannya -- tanpa perlu percaya
-begitu saja pada kata-kata Anda.
+Anyone can run this. It re-computes the SHA-256 fingerprint of every file
+listed in manifest.sha256 and compares it to the recorded value.
 
-CARA PAKAI:
     python verify_manifest.py
 
-Hasil yang diharapkan: semua baris "OK", dan baris terakhir
-"SEMUA FILE COCOK -- tidak ada yang berubah."
+Expected output: every line reads OK, and the last line confirms that all
+files match. A file that differs, or is missing, is reported by name and
+the script exits with a failure code.
 """
 import hashlib
 import sys
